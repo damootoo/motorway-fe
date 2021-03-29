@@ -39,11 +39,11 @@ const App = () => {
       <div className="container">
         {
           images && images.map((img, index) => (
-            <Panel img={img} hideButton={hideButton} showButton={showButton} setModal={setModal} setModalInfo={setModalInfo} index={index} activeImage={activeImage}/>
+            <Panel key={img.id} img={img} hideButton={hideButton} showButton={showButton} setModal={setModal} setModalInfo={setModalInfo} index={index} activeImage={activeImage}/>
           ))
         }
       </div>
-      {modal && <div className="modal-backdrop"></div>}
+      {modal && <div className="modal-backdrop" onClick={()=>setModal(false)}></div>}
       {modal && <CarouselModal modal={modal} close={closeModalHandler} modalInfo={modalInfo} images={images} />}
     </div>
   );

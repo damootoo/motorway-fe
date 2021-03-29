@@ -58,6 +58,10 @@
     display: flex;
     background: white;
     border-radius: 20px;
+    transition-property: transform, opacity;
+    transition-duration: 0.5s;
+    opacity: 0;
+    transform: translateY(-20%);
 
     .avatar {
         &-container {
@@ -77,12 +81,13 @@
 }
 
 .hide {
-    display: none;
+    opacity: 0;
 }
 
 .show {
     display: flex;
     margin: auto;
+    transform: translateY(0%);
     opacity: 1;
 }
 
@@ -133,4 +138,31 @@
         width: 400px;
         height: auto;
     }
+
+    .right-arrow {
+        position: absolute;
+        top: 50%;
+        right: 30px;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .left-arrow {
+        position: absolute;
+        top: 50%;
+        left: 30px;
+        cursor: pointer;
+        user-select: none;
+    }
+}
+
+.slide {
+    opacity: 0;
+    transition-duration: 1s ease;
+}
+
+.slide.active {
+    opacity: 1;
+    transition-duration: 1s;
+    transform: scale(1);
 }

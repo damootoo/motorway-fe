@@ -4,7 +4,7 @@ import ImageBanner from '../ImageBanner'
 const Panel = ({ img, showButton, hideButton, setModal, setModalInfo, index, activeImage }) => {
 
     return (
-        <div key={img.id} className='panel-container' onMouseEnter={() => showButton(img.id)}
+        <div className='panel-container' onMouseEnter={() => showButton(img.id)}
             onMouseLeave={() => hideButton(img.id)} onClick={() => {
                 setModalInfo({ image: img.url, index })
                 setModal(true)
