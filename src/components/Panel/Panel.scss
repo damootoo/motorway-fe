@@ -9,12 +9,13 @@
     position: relative;
     overflow: hidden;
     flex: auto;
-    border-radius: 20px;
-    box-shadow: 5px -5px 10px rgba(0, 0, 0, 0.3);
+    // border-radius: 20px;
+    // box-shadow: 5px -5px 10px rgba(0, 0, 0, 0.3);
     transform: scale(1);
-    transition-property: opacity;
+    transition-property: opacity, filter;
     transition-duration: 0.3s;
     opacity: 1;
+    filter: none;
     cursor: pointer;
 
     &:after {
@@ -36,5 +37,6 @@
 
 .hover {
     opacity: 0.3;
+    filter: invert(100%)
 }
 

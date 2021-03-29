@@ -19,9 +19,15 @@ const App = () => {
   let tl = new TimelineLite()
 
   useEffect(() => {
+
+    performance.mark('imageApiCallStart')
     fetch('images?limit=10')
       .then(res => res.json())
       .then(data => {
+        performance.mark('imageApiCallEnd')
+        performance.measure('imageApiTest', 'imageApiCallStart', 'imageApiCallEnd')
+        const performanceMeasure = performance.getEntriesByName('imageApiTest')
+        console.log(performanceMeasure);
         console.log('Success:', data);
         setImages(data);
       })
@@ -31,8 +37,8 @@ const App = () => {
   }, []);
 
   useEffect(()=> {
-    tl.to(container, { duration: 0.5, css: { visibility: "visible" } })
-        .to(imageReveal, { duration: 1, width: "0%", ease: Power2 })
+    tl.to(container, { duration: 1, css: { visibility: "visible" } })
+        .to(imageReveal, { duration: 1, stagger: 1, width: "0%", ease: Power2 })
   })
 
   const closeModalHandler = () => {
