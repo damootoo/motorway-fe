@@ -11,7 +11,7 @@ const Carousel = ({ modalInfo, images, index }) => {
     useEffect(() => {
         setImage(images[current].url)
         setAnimate(true)
-      }, [current]);
+      }, [current, images]);
 
     const nextSlide = () => {
         setAnimate(false)
@@ -27,7 +27,7 @@ const Carousel = ({ modalInfo, images, index }) => {
         <div className="carousel-wrapper">
             <div className="left-arrow" onClick={prevSlide}>{'<'} </div>
             <div className="right-arrow" onClick={nextSlide}>{'>'} </div>
-            <img src={image} className={`${animate && 'slide active'} slide`}/>
+            <img src={image} alt={images[current].alt_description} className={`${animate && 'slide active'} slide`}/>
         </div>
     );
 }

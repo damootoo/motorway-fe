@@ -19,11 +19,11 @@ const App = () => {
   let textRef = useRef(null)
   let formRef = useRef(null)
   let content = useRef(null)
-  let imageReveal = CSSRulePlugin.getRule('.img-container:after')
-
-  let tl = new TimelineLite()
-
+  
+  
   useEffect(() => {
+    let imageReveal = CSSRulePlugin.getRule('.img-container:after')
+    let tl = new TimelineLite()
 
     const headlineFirst = content.children[0].children[0];
     const headlineSecond = headlineFirst.nextSibling;
