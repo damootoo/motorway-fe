@@ -36,6 +36,7 @@ const App = () => {
 
   return (
     <div className='app'>
+      <h1>Masonry Image Grid</h1>
       <div className="container">
         {
           images && images.map((img, index) => (
