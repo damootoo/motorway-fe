@@ -1,0 +1,40 @@
+.panel-container {
+    position: relative;
+    margin: 0.2vw;
+}
+
+.img-container {
+    width: 300px;
+    object-fit: cover;
+    position: relative;
+    overflow: hidden;
+    flex: auto;
+    border-radius: 20px;
+    box-shadow: 5px -5px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+    transition-property: opacity;
+    transition-duration: 0.3s;
+    opacity: 1;
+    cursor: pointer;
+
+    &:after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        top: 0;
+        right: 0;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+}
+
+.hover {
+    opacity: 0.3;
+}
+

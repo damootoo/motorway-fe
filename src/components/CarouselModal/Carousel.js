@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+
 const Carousel = ({ modalInfo, images, index }) => {
 
     const [current, setCurrent] = useState(modalInfo.index)

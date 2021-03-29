@@ -16,8 +16,7 @@ const App = () => {
   let container = useRef(null)
   let imageReveal = CSSRulePlugin.getRule('.img-container:after')
 
-
-  let tl = new TimelineLite
+  let tl = new TimelineLite()
 
   useEffect(() => {
     fetch('images?limit=10')
@@ -32,7 +31,6 @@ const App = () => {
   }, []);
 
   useEffect(()=> {
-    console.log(container);
     tl.to(container, { duration: 0.5, css: { visibility: "visible" } })
         .to(imageReveal, { duration: 1, width: "0%", ease: Power2 })
   })
@@ -52,7 +50,7 @@ const App = () => {
 
   return (
     <div className='app'>
-      <h1>Masonry Image Grid</h1>
+      <h1>Masonry Responsive Image Grid</h1>
       <div ref={el => container = el} className="container">
         {
           images && images.map((img, index) => (

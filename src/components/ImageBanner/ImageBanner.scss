@@ -1,0 +1,41 @@
+
+.image-banner {
+    position: absolute;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    background: white;
+    border-radius: 20px;
+    transition-property: transform, opacity;
+    transition-duration: 0.5s;
+    opacity: 0;
+    transform: translateY(-20%);
+
+    .avatar {
+        &-container {
+            img {
+                width: 100px;
+                height: auto;
+                border-radius: 20px;
+            }
+        }
+
+        &-user {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+    }
+}
+
+.hide {
+    opacity: 0;
+}
+
+.show {
+    display: flex;
+    margin: auto;
+    transform: translateY(0%);
+    opacity: 1;
+}
