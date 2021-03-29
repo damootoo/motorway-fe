@@ -11,7 +11,7 @@ const Carousel = ({ modalInfo, images, index }) => {
     useEffect(() => {
         setImage(images[current].url)
         setAnimate(true)
-      }, [current, images]);
+      }, [current]);
 
     const nextSlide = () => {
         setAnimate(false)

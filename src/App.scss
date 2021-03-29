@@ -1,14 +1,45 @@
 // Variables
 $white: #fff;
 $lightgrey: lightgrey;
+$black: #000;
 
 .app {
+    visibility: hidden;
+
+    .title {
+        display: flex;
+        width: 100%;
+        margin-bottom: 40px;
+        background: $lightgrey;
+        justify-content: center;
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+
+        @media (min-width: 800px) {
+            flex-direction: row;
+        }
+    }
+
     h1 {
         text-align: center;
-        margin-bottom: 40px;
         color: $white;
-        background: $lightgrey;
-        padding: 20px;
+        padding: 20px 10px;
+        div {
+            margin-right: 10px;
+        }
+    }
+
+    .form-link {
+        position: relative;
+        color: $black;
+        cursor: pointer;
+        font-size: 20px;
+
+        @media (min-width: 800px) {
+            position: absolute;
+            right: 0;
+        }
     }
     .container {
         margin: 0 auto;
@@ -17,12 +48,11 @@ $lightgrey: lightgrey;
         flex-flow: row wrap;
         flex-wrap: wrap;
         align-items: center;
-        visibility: hidden;
-        justify-content: center
+        justify-content: center;
     }
 }
 
-
-@import './components/CarouselModal/Modal.scss';
-@import './components/ImageBanner/ImageBanner.scss';
-@import './components/Panel/Panel.scss'
+@import "./components/CarouselModal/Modal.scss";
+@import "./components/ImageBanner/ImageBanner.scss";
+@import "./components/Panel/Panel.scss";
+@import "./components/Form/Form.scss";

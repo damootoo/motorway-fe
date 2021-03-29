@@ -1,5 +1,4 @@
 import React from 'react';
-// import './Panel.scss'
 import ImageBanner from '../ImageBanner'
 
 const Panel = ({ img, showButton, hideButton, setModal, setModalInfo, index, activeImage }) => {
@@ -11,9 +10,9 @@ const Panel = ({ img, showButton, hideButton, setModal, setModalInfo, index, act
                 setModal(true)
             }}>
             <div className={`${activeImage === img.id && 'hover'} img-container`} >
-                <img src={img.url} alt={img.alt} />
+                <img src={img.url} alt={img.alt_description} />
             </div>
-            <ImageBanner activeImage={activeImage === img.id} key={`banner-${img.id}`} url={img.user.profile_image} user={img.user.name} />
+            <ImageBanner activeImage={activeImage === img.id} key={`banner-${img.id}`} alt={img.alt_description} url={img.user.profile_image} user={img.user.name} />
         </div>
     );
 }
